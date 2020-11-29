@@ -39,7 +39,7 @@ COPY client/package-lock.json ./client/package-lock.json
 #RUN mkdir -p output/contracts/
 
 # Hacemos el Build de la app React
-RUN cd client && npm i web3@1.0.0-beta.37 sha3@1.2.0 && npm install 
+RUN cd client && npm i web3@1.0.0-beta.37 sha3@1.2.0 env-cmd && npm install 
 
 #RUN npm run build
 
