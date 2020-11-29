@@ -67,11 +67,9 @@
     "truffle-hdwallet-provider": "0.0.3"
   },
   "scripts": {
-    "start-js": "PORT=3000 react-scripts start",
     "start": "env-cmd ./.env node scripts/start.js",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "env-cmd ./.env node scripts/build.js",
+    "test": "env-cmd ./.env node scripts/test.js --env=jsdom"
   },
   "jest": {
     "collectCoverageFrom": [
