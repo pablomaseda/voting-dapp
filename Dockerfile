@@ -13,7 +13,8 @@ RUN git config --global url."https://github.com/".insteadOf ssh://github.com
 
 RUN npm config set registry https://registry.npmjs.org/
 
-RUN npm install --unsafe-perm -g gulp react-scripts sha3
+RUN npm install --unsafe-perm -g gulp sha3
+#react-scripts
 
 # Install Truffle
 RUN npm install --unsafe-perm  -g truffle@5.0.19
@@ -41,7 +42,7 @@ COPY client/package-lock.json ./client/package-lock.json
 #RUN mkdir -p output/contracts/
 
 # Hacemos el Build de la app React
-RUN cd client && npm i web3@1.0.0-beta.37 sha3@1.2.0 env-cmd && npm install 
+RUN cd client && npm i web3@1.0.0-beta.37 sha3@1.2.0 env-cmd dotenv  && npm install 
 
 #RUN npm run build
 
