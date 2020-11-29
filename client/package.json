@@ -67,9 +67,9 @@
     "truffle-hdwallet-provider": "0.0.3"
   },
   "scripts": {
-    "start": "env-cmd ./.env node scripts/start.js",
-    "build": "env-cmd ./.env node scripts/build.js",
-    "test": "env-cmd ./.env node scripts/test.js --env=jsdom"
+    "start": "./node_modules/env-cmd/bin/env-cmd.js ./.env node scripts/start.js",
+    "build": "./node_modules/env-cmd/bin/env-cmd.js ./.env node scripts/build.js",
+    "test": "./node_modules/env-cmd/bin/env-cmd.js ./.env node scripts/test.js --env=jsdom"
   },
   "jest": {
     "collectCoverageFrom": [
