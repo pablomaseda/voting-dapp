@@ -33,7 +33,7 @@ contract('Voting', (accounts) => {
     return Voting.deployed()
       .then(instance => {
         votingInstance = instance;
-        return votingInstance.postulateCandidate(candidate, {from: accounts[0]})
+        return votingInstance.postulateCandidate(web3.utils.asciiToHex(candidate), {from: accounts[0]})
       })
       .then(() => votingInstance.listCandidates.call({from: accounts[0]}))
       .then(candidateList => candidateList.map(toAscii))
@@ -49,10 +49,10 @@ contract('Voting', (accounts) => {
     return Voting.deployed()
       .then(instance => {
         votingInstance = instance;
-        return votingInstance.voteForCandidate(candidate, {from: accounts[0]});
+        return votingInstance.voteForCandidate(web3.utils.asciiToHex(candidate), {from: accounts[0]});
       })
-      .then(() => votingInstance.getCandidateVotes.call(candidate, {from: accounts[0]}))
-      .then(response => response.c[0])
+      .then(() => votingInstance.getCandidateVotes.call(web3.utils.asciiToHex(candidate), {from: accounts[0]}))
+//      .then(response => response.c[0])
       .then((votes) => {
         assert.equal(votes, 1, 'Candidate does not have votes');
       })
@@ -65,10 +65,10 @@ contract('Voting', (accounts) => {
     return Voting.deployed()
       .then(instance => {
         votingInstance = instance;
-        return votingInstance.votes.call(candidate, {from: accounts[0]});
+        return votingInstance.votes.call(web3.utils.asciiToHex(candidate), {from: accounts[0]});
       })
-      .then(() => votingInstance.getCandidateVotes.call(candidate, {from: accounts[0]}))
-      .then(response => response.c[0])
+      .then(() => votingInstance.getCandidateVotes.call(web3.utils.asciiToHex(candidate), {from: accounts[0]}))
+//      .then(response => response.c[0])
       .then((votes) => {
         assert.equal(votes, 1, 'Candidate does not have votes');
       })
