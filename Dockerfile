@@ -30,24 +30,13 @@ RUN mkdir -p output/contracts/
 
 # Move React Files
 RUN mkdir client
-#RUN cp -R client/contracts ./contracts
-#RUN cp -R client/migrations ./migrations
-#RUN cp -R client/test ./test
-#COPY truffle-config.js ./truffle-config.js
-
 COPY client/src ./client/src
 COPY client/public ./client/public
 COPY client/package.json ./client/package.json
 COPY client/package-lock.json ./client/package-lock.json
 
-#RUN mkdir -p src/contracts/
+#RUN mkdir -p ./client/src/contracts/
 #RUN mkdir -p output/contracts/
-
-#RUN npm cache clean --force
-
-# Clean Install NPM Dependencies
-#RUN cd client && npm ci
-#RUN apt-get update && apt-get install build-essential -y
 
 # Hacemos el Build de la app React
 RUN cd client && npm i web3@1.0.0-beta.37 sha3@1.2.0 && npm install 
