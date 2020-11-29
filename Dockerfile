@@ -31,6 +31,8 @@ RUN mkdir -p output/contracts/
 # Move React Files
 RUN mkdir client
 COPY client/src ./client/src
+COPY client/scripts ./client/scripts
+COPY client/config ./client/config
 COPY client/public ./client/public
 COPY client/package.json ./client/package.json
 COPY client/package-lock.json ./client/package-lock.json
