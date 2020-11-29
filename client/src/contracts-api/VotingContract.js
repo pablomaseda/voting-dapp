@@ -1,5 +1,5 @@
 import { toAsciiFromByte32, getWeb3 } from 'utils'
-import VotingContractMeta from '../../build/contracts/Voting.json'
+import VotingContractMeta from 'contracts-api/Voting.json'
 import contract from 'truffle-contract'
 
 
